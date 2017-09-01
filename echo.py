@@ -84,11 +84,12 @@ def echo(path):
 
     response = jsonify(data)
     response.status_code = status_code
+    print request.get_json(silent=True)
     return response
 
 def main():
     parser = OptionParser()
-    parser.add_option('--port', dest='port', default=5000, help='port to run server on - default 5000')
+    parser.add_option('--port', dest='port', default=8888, help='port to run server on - default 5000')
     parser.add_option('--auth', dest='auth', help='basic authentication credentials, should be passed in like "username:password"')
     parser.add_option('-v', '--verbose', dest='verbose',
         default=False, action='store_true', help='increased verbosity - outputs response to console')
