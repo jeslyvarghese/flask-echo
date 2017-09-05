@@ -84,7 +84,7 @@ def echo(path):
 
     response = jsonify(data)
     response.status_code = status_code
-    print request.get_json(silent=True)
+    print(extract(request.form))
     return response
 
 def main():
